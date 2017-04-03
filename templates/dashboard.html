@@ -1,0 +1,340 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meta_block %} {% endblock %}
+{% block title_block %} Scheme Details {% endblock %}
+{% block style_block %} {% endblock %}
+{% block body_block %}
+<!-- Start Widget -->
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="mini-stat clearfix bx-shadow bg-info">
+                            <span class="mini-stat-icon"><i class=" fa fa-rupee"></i></span>
+                            <div class="mini-stat-info text-right">
+                                <span class="counter val_invest_amount">31,69,053</span>
+                            </div>
+                            <div class="tiles-progress">
+                                <div class="m-t-20">
+                                    <h5 class="text-uppercase text-white m-0">Amount Invested </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="mini-stat clearfix bg-purple bx-shadow">
+                            <span class="mini-stat-icon"><i class="ion-pricetag"></i></span>
+                            <div class="mini-stat-info text-right">
+                                <span class="counter val_cmv">34,34,900</span>
+                            </div>
+                            <div class="tiles-progress">
+                                <div class="m-t-20">
+                                    <h5 class="text-uppercase text-white m-0">Current Market Value</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="mini-stat clearfix bg-primary bx-shadow">
+                            <span class="mini-stat-icon"><i class="fa fa-ils"></i></span>
+                            <div class="mini-stat-info text-right">
+                                <span class="counter val_unrealised_gains">2,34,234</span>
+                            </div>
+                            <div class="tiles-progress">
+                                <div class="m-t-20">
+                                    <h5 class="text-uppercase text-white m-0">Unrealised gains</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="mini-stat clearfix bg-success bx-shadow">
+                            <span class="mini-stat-icon"><i class="fa fa-ioxhost"></i></span>
+                            <div class="mini-stat-info text-right">
+                                <span class="counter val_realised_gains">2,05,447</span>
+                            </div>
+                            <div class="tiles-progress">
+                                <div class="m-t-20">
+                                    <h5 class="text-uppercase text-white m-0">Realised gains</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="mini-stat clearfix bg-success bx-shadow">
+                            <span class="mini-stat-icon"><i class="fa fa-bolt"></i></span>
+                            <div class="mini-stat-info text-right">
+                                <span class="counter val_dividend">34,345</span>
+                            </div>
+                            <div class="tiles-progress">
+                                <div class="m-t-20">
+                                    <h5 class="text-uppercase text-white m-0">Dividends</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="mini-stat clearfix bg-primary bx-shadow">
+                            <span class="mini-stat-icon"><i class="fa fa-indent"></i></span>
+                            <div class="mini-stat-info text-right">
+                                <span class="counter val_commited_amount">52,10,000</span>
+                            </div>
+                            <div class="tiles-progress">
+                                <div class="m-t-20">
+                                    <h5 class="text-uppercase text-white m-0">Total Committed Capital</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="mini-stat clearfix bg-purple bx-shadow">
+                            <span class="mini-stat-icon"><i class="fa fa-ticket"></i></span>
+                            <div class="mini-stat-info text-right">
+                                <span class="counter val_xirr">95.6%</span>
+                            </div>
+                            <div class="tiles-progress">
+                                <div class="m-t-20">
+                                    <h5 class="text-uppercase text-white m-0">XIRR</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="mini-stat clearfix bg-primary bg-info">
+                            <span class="mini-stat-icon"><i class="fa fa-send"></i></span>
+                            <div class="mini-stat-info text-right">
+                                <span class="counter val_xirr_nifty">20%</span>
+                            </div>
+                            <div class="tiles-progress">
+                                <div class="m-t-20">
+                                    <h5 class="text-uppercase text-white m-0">XIRR NIFTY</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- End row-->
+<div class="row">
+                    <div class="col-lg-8">
+                        <div class="portlet"><!-- /portlet heading -->
+                            <div class="portlet-heading">
+                                <h3 class="portlet-title text-dark text-uppercase">
+                                    Performance
+                                </h3>
+                                <div class="portlet-widgets">
+                                    <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
+                                    <span class="divider"></span>
+                                    <a data-toggle="collapse" data-parent="#accordion1" href="index.html#portlet1"><i class="ion-minus-round"></i></a>
+                                    <span class="divider"></span>
+                                    <a href="index.html#" data-toggle="remove"><i class="ion-close-round"></i></a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="portlet1" class="panel-collapse collapse in">
+                                <div class="portlet-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="website-stats" style="position: relative;height: 410px">
+                                                <canvas id="dashboard_chart" height="500" width="1000"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- /Portlet -->
+                    </div> <!-- end col -->
+
+                    <div class="col-lg-4">
+                        <div class="portlet"><!-- /portlet heading -->
+                            <div class="portlet-heading">
+                                <h3 class="portlet-title text-dark text-uppercase">
+                                    Assets
+                                </h3>
+                                <div class="portlet-widgets">
+                                    <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
+                                    <span class="divider"></span>
+                                    <a data-toggle="collapse" data-parent="#accordion1" href="index.html#portlet2"><i class="ion-minus-round"></i></a>
+                                    <span class="divider"></span>
+                                    <a href="index.html#" data-toggle="remove"><i class="ion-close-round"></i></a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="portlet2" class="panel-collapse collapse in">
+                                <div class="portlet-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="pie-chart">
+                                                <div id="pie-chart-container" class="flot-chart" style="height: 320px">
+                                                </div>
+                                            </div>
+
+                                            <div class="row text-center m-t-30">
+                                                <div class="col-sm-6">
+                                                    <h4 class="counter">86,956</h4>
+                                                    <small class="text-muted"> Weekly Report</small>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <h4 class="counter">86,69</h4>
+                                                    <small class="text-muted">Monthly Report</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- /Portlet -->
+                    </div> <!-- end col -->
+                </div> <!-- End row -->
+{% endblock %}
+{% block script_block %}
+<script src={% static "custom/js/moment.min.js" %}></script>
+<script src={% static "custom/js/chart.js" %}></script>
+<script src={% static "custom/js/ajax.js" %}></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    get_values();
+    get_performance();
+});
+function get_values () {
+    var op = {
+        url: '/json/values'
+    }
+    Ajax.send(op,function (data) {
+        if (data.investment_amount != undefined){
+            $('.val_invest_amount').text(intToNumber(data.investment_amount))
+            $('.val_cmv').text(intToNumber(data.current_market_value))
+            $('.val_returns').text(intToNumber(data.returns))
+            $('.val_dividend').text(intToNumber(data.dividend))
+            $('.val_commited_amount').text(intToNumber(data.committed_amount))
+            $('.val_realised_gains').text(intToNumber(data.realised_gains))
+            $('.val_unrealised_gains').text(intToNumber(data.unrealised_gains))
+            $('.val_xirr').text(intToNumber(data.xirr));
+            $('.val_xirr_nifty').text(intToNumber(data.xirr_nifty));
+        }
+    })
+}
+function  get_performance () {
+    var op = {
+        url: '/json/performace'
+    }
+    Ajax.send(op,function (data) {
+        if (data.length >0){
+            form_area_chart(data)
+        } 
+        if (data.assets != undefined){
+            form_pie_chart(data.assets)
+        }
+    })
+}
+function form_area_chart (data) {
+    var chart_data = [];
+    var labels = [];
+    var max_y=0, min_y=0;
+    var length = data.length
+    var timestamp;
+    for (var i = 0; i < length; i++) {
+        var item = data[i];
+        var val = Math.round(item[1]*100)/100;
+        chart_data.push(val)
+        labels.push(item[0])
+        if (i== (length-1)){
+            timestamp = item[0]
+        }
+    };
+    var lineData = {
+        labels: labels,
+        datasets: [
+            {
+                label: "",
+                backgroundColor: '',
+                borderColor: "#ec407a",
+                pointBackgroundColor: "rgba(26,179,148,1)",
+                pointBorderColor: "#fff",
+                data: chart_data,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                spanGaps: false
+            }
+        ]
+    };
+    var lineOptions = {
+        responsive: true,
+        pointRadius:1,
+        scales: {
+            xAxes: [{
+                type: 'time',
+                time: {
+                    displayFormats: {
+                        quarter: 'MMM YYYY',
+                        month: 'MM YYYY'
+                    }
+                },
+            }],
+        },
+        tooltips:{
+            callbacks:{
+                label: function (item) {
+                    t = new Date(item.xLabel);
+                    return " "+t.get_string()+" : "+item.yLabel
+                },
+                title: function (item) {
+                    item = item[0];
+                    t = new Date(item.xLabel);
+                    return ""
+                }
+            }
+        },
+        legend: {
+            display: false,
+            labels: {
+                fontColor: 'rgb(255, 99, 132)'
+            }
+        }
+    };
+    var ctx = document.getElementById("dashboard_chart").getContext("2d");
+    new Chart(ctx, {type: 'line', data: lineData, options:lineOptions});
+}
+function form_pie_chart (data) {
+    
+}
+function intToNumber (nStr) {
+    nStr = Math.round(nStr * 100)/100
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    var z = 0;
+    var len = String(x1).length;
+    var num = parseInt((len / 2) - 1);
+    while (rgx.test(x1)) {
+        if (z > 0) {
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        } else {
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+            rgx = /(\d+)(\d{2})/;
+        }
+        z++;
+        num--;
+        if (num == 0) {
+            break;
+        }
+    }
+    return   x1 + x2 ; 
+    // body...
+}
+Date.prototype.get_string = function() {
+  var mm = this.getMonth() + 1; // getMonth() is zero-based
+  var dd = this.getDate();
+
+  return [this.getFullYear(),
+          (mm>9 ? '' : '0') + mm,
+          (dd>9 ? '' : '0') + dd
+         ].join('-');
+};
+</script>
+{% endblock %}

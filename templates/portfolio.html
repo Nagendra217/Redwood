@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meta_block %} {% endblock %}
+{% block title_block %} Scheme Details {% endblock %}
+{% block style_block %} {% endblock %}
+{% block body_block %}
+ <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Current Holdings</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="table-responsive">
+                                            <table class="table portfolio_table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Scrip name</th>
+                                                        <th>Quantity</th>
+                                                        <th>Current Value</th>
+                                                        <th>% of portfolio</th>
+                                                        <th>Dividend</th>
+                                                        <th>Realised gains</th>
+                                                        <th>Unrealised gains</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End row -->
+{% endblock %}
+{% block script_block %}
+<script type="text/javascript">
+$(document).ready(function (argument) {
+    get_portfolio();
+});
+function get_portfolio (argument) {
+    var op = {
+        url: '/json/portfolio'
+    }
+    Ajax.send(op,function (data) {
+        console.log(data);
+        console.log($('.portfolio_table tbody'))
+        var holder = $('.portfolio_table tbody').empty();
+        if (data.data != undefined && data.data.length > 0){
+            for (var i = data.data.length - 1; i >= 0; i--) {
+                var item = data.data[i];
+                var tr = $('<tr/>');
+                tr.append($('<td/>').append(item[0]))
+                tr.append($('<td/>').append(item[1]))
+                tr.append($('<td/>').append(intToNumber(item[2])))
+                tr.append($('<td/>').append(item[3]))
+                tr.append($('<td/>').append(item[4]))
+                tr.append($('<td/>').append(intToNumber(item[5])))
+                tr.append($('<td/>').append(intToNumber(item[6])))
+                holder.append(tr)
+            };
+        }
+    })
+}
+function intToNumber (nStr) {
+    nStr = Math.round(nStr * 100)/100
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    var z = 0;
+    var len = String(x1).length;
+    var num = parseInt((len / 2) - 1);
+    while (rgx.test(x1)) {
+        if (z > 0) {
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        } else {
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+            rgx = /(\d+)(\d{2})/;
+        }
+        z++;
+        num--;
+        if (num == 0) {
+            break;
+        }
+    }
+    return   x1 + x2 ; 
+    // body...
+}
+</script>
+{% endblock %}

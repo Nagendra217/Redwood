@@ -1,0 +1,564 @@
+<!DOCTYPE html> 
+{% load staticfiles %}
+<html class="no-js" lang="en"> 
+    
+<!-- Mirrored from rwadvisors.in/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Mar 2016 20:05:27 GMT -->
+<head>
+        <title>RW Advisors</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta charset="UTF-8">
+
+        <!-- CSS Bootstrap & Custom -->
+        <link href={% static "home/bootstrap/css/bootstrap.css"%} rel="stylesheet" media="screen">
+		<link href={% static "home/css/animate.css"%} rel="stylesheet" media="screen">
+        <link href={% static "home/css/templatemo_style.css" %} rel="stylesheet" media="screen">
+       
+        <!-- JavaScripts -->
+        <script src={% static "home/js/jquery-1.10.2.min.js"%}></script>
+        <script src={% static "home/js/modernizr.js"%}></script>
+        <!--[if lt IE 8]>
+	    <div style=' clear: both; text-align:center; position: relative;'>
+            <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" alt="" /></a>
+        </div>
+        <![endif]-->
+        <style type="text/css">
+        	.col-md-12.animated-item.fadeInLeft.animated > p {
+			    font-size: 18px;
+			    line-height: 34px;
+			    text-align: justify;
+			}
+			.feature-info > p {
+			    font-size: 14px;
+			    text-align: justify;
+			}
+			.team-overlay, .folio-overlay {
+				background: rgba(136,136,136, 0.6) none repeat scroll 0 0;
+				cursor: pointer;
+			}
+			.team-desc p i {
+				font-size: 30px;
+			}
+			.modal {
+				z-index: 10000;
+			}
+			.modal .modal-dialog {
+			    font-size: 15px !important;
+			    line-height: 30px !important;
+			    padding-top: 112px !important;
+			    right: auto;
+			    text-align: justify !important;
+			    width: 800px !important;
+			}
+			.team-thumb {
+			  height: 220px;
+			  width: 260px;
+			  overflow: hidden;
+			}
+			.drop{
+				margin-left: 0px !important;
+			}
+        </style>
+    </head>
+    <body>
+    	
+	<!-- Preloader -->
+	<div id="page-preloader">
+	    <div id="spinner"></div>
+	</div>
+	<!-- End Preloader -->
+	
+	<!-- Mobile Menu -->
+	<div id="mobile-menu" class="mobile-nav hide-nav hidden-md hidden-lg">
+	    <div class="mobile-menu-close">
+		<button type="button" class="close" aria-hidden="true"><span>Close</span>&times;</button>
+	    </div>
+	   
+		<ul class="mobile-navigation">
+		    <li><a href="#introduction">Home</a></li>
+		    <li><a href="#about">About Us</a></li>
+		    <li><a href="#portfolio">Philosophy</a></li>
+		    <li><a href="#our-team">Our Team</a></li>
+		    <li><a href="#contact">Contact</a></li>
+		</ul>
+		
+		<ul class="mobile-social-icons">
+		    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+		    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+		    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+		    <li><a href="#"><i class="fa fa-rss"></i></a></li>
+		</ul>
+	    
+	</div>
+
+        <!-- Header -->
+        <header id="header" class="site-header" role="banner">
+	    <div class="container">
+		<div class="row">
+		    
+		    <div class="col-md-2 logo">
+			<a href="/">
+			    <!--<h1 style="margin:0px;"><span style="color:#E04D47;">RW</span> Advisors</h1>-->
+			    <img src={% static "home/images/rw-logo.svg"%} alt="rw-logo">
+			</a>
+		    </div> <!-- //.logo -->
+		    
+		    <div class="col-md-10">
+			<nav id="navigation" class="hidden-sm hidden-xs">
+			    <ul id="main-nav" class="main-navigation">
+					<li class="current"><a href="#introduction">Home</a></li>
+					<li><a href="#about">About Us</a></li>
+					<li><a href="#portfolio">Philosophy</a></li>
+					<li><a href="#our-team">Our Team</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="http://valueinvestorat.blogspot.in/" target="_blank">Blog</a></li>
+	                {% if request.user.is_authenticated %}
+		            <li class="dropdown">
+		            	<a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true">
+		                {{request.user}}
+		                </a>
+			            <ul class="dropdown-menu">
+			                <li class="drop"><a href="/dashboard"> Dashboard</a></li><br>
+			                <li class="drop"><a href="/logout"></i> Logout</a></li>
+			            </ul>
+			        </li>
+					{% else %}
+						<li><a href="/login">login</a></li>
+					{% endif %}
+			    </ul>
+			</nav>
+			
+			<a href="#mobile-menu" class="visible-xs visible-sm mobile-menu-trigger"><i class="fa  fa-reorder"></i></a>
+			
+		    </div>
+		    
+		</div> <!-- //.row -->
+	    </div> <!-- //.container -->
+            
+        </header>
+	<!-- End Header -->
+	
+	<!-- Introduction Section -->
+	<section id="introduction" class="content-section clearfix">
+	    <div class="flexslider introduction-slider">
+		
+		<ul class="slides">
+		    <li> 
+			<div class="flex-caption section-overlay slide-caption">
+			    <div class="container">
+				<div class="row">
+				    <div class="col-md-12">
+					<h2>
+					    Multiple lenses to improve investment outcomes
+					</h2>
+				    </div>
+				</div>
+			    </div>
+			</div> 
+			<img src={% static "home/images/slides/slide2.jpg"%} alt="slide-01">  
+		    </li>
+		    
+		    <li> 
+			<div class="flex-caption section-overlay slide-caption">
+			    <div class="container">
+				<div class="row">
+				    <div class="col-md-12">
+					<h2>
+					    Superior performance by picking steady performers
+					</h2>
+				    </div>
+				</div>
+			    </div>
+			</div> 
+			<img src={% static "home/images/slides/slide1.jpg"%} alt="slide-02">    
+		    </li>
+		    
+		    <li> 
+			<div class="flex-caption section-overlay slide-caption">
+			    <div class="container">
+				<div class="row">
+				    <div class="col-md-12">
+					<h2>
+					    Reduce the noise from short term events
+					</h2>
+				    </div>
+				</div>
+			    </div>
+			</div> 
+			<img src={% static "home/images/slides/slide3.jpg"%} alt="slide-03">    
+		    </li>
+		</ul>
+
+		<div class="slide-navigation">
+		    <a href="#" class="slide-prev"><i class="fa fa-arrow-left"></i></a>
+		    <a href="#" class="slide-next"><i class="fa fa-arrow-right"></i></a>
+		</div>
+		
+	    </div> <!-- //.flexslider -->
+	</section>
+	<!-- End Introduction Section -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 style='text-align:center;'> RW Investment Advisors LLP is registered with SEBI as an Investment Advisor (INA200004342) and is subject to its rules &amp; regulations.</h3>
+			</div>
+		</div>
+	</div>
+	<!-- About Section -->
+	<section id="about" class="content-section clearfix">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-12">
+			<h2 class="section-title left">About US</h2>
+		    </div>
+		</div>
+		<div class="row">
+		    
+		    <div class="col-md-4 animated-item feature-item fadeInUp" data-delay="200">
+			<span class="feature-icon"><i class="li_bulb"></i></span>
+			<div class="feature-info">
+			    <h3 class="feature-title"><span></span>Genesis</h3>
+			    <p>Founded in 2015, RW Investment advisors is a SEBI registered investment advisory firm (Registration No. INA200004342) run by first generation entrepreneurs who have a combined investment experience of 25 years and an extraordinary passion for public markets.</p>
+			</div>
+		    </div>
+		    
+		    <div class="col-md-4 animated-item feature-item fadeInUp" data-delay="300">
+			<span class="feature-icon"><i class="li_params"></i></span>
+			<div class="feature-info">
+			    <h3 class="feature-title"><span></span>Mandate</h3>
+			    <p>We are a sector and horizon agnostic advisory firm with deep local knowledge and network. We advise our clients on investing in stable businesses with a track record of excellence in capital allocation, governance, management bandwidth and ethical conduct.</p>
+			</div>
+		    </div>
+		    
+		    <div class="col-md-4 animated-item feature-item fadeInUp" data-delay="400">
+			<span class="feature-icon"><i class="li_heart"></i></span>
+			<div class="feature-info">
+			    <h3 class="feature-title"><span></span>Safety First</h3>
+			    <p>As advisors, we believe in disciplined and patient approach to investing irrespective of market cycles and complete alignment of interests with our partners and stakeholders.</p>
+			</div>
+		    </div>
+		    
+		</div> <!-- //.row -->
+		
+		<hr class="solid">
+		
+		
+	    </div> <!-- //.container -->
+	</section>
+	<section id="counter" class="content-section content-overlay parallax-section clearfix">
+		<div class="section-overlay">
+		    <div class="container">
+			
+		    </div>
+		    
+		</div>
+	</section>
+	<!-- End About Section -->
+	
+	<!-- Portfolio Section -->
+	<section id="portfolio" class="content-section clearfix">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-12">
+			<h2 class="section-title right">Philosophy</h2>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-12 animated-item fadeInLeft" data-delay="200">
+			<p>At RW investment advisors, we are firm believers of India's long term economic fundamentals driven by a young and aspiring middle-class, sound educational and legal institutions and a vibrant democracy. Equities is the right conduit to participate in India's growth.</p>
+ 			<br>
+			<p>We specialize in public market investments and have a proprietary framework which combines fundamental and technical factors to identify businesses that can create long term wealth. Our guiding philosophy is protection of capital and compounding of value over longer periods.</p>
+			<br>
+			<p>We are staunch followers of Buffett, i.e. growth at reasonable price philosophy and look for quantifiable moats in the companies that we invest in. One of the key reasons to start RW investment advisors was to get away from the crowd, keep noise at bay and focus on longer term trends.</p>
+			
+		    </div>
+		</div>
+	    
+	</section>
+	<!-- End Portfolio Section -->
+	
+	<!-- Partners Section -->
+	<section id="partners" class="content-section content-overlay parallax-section clearfix">
+	    
+	    <div class="section-overlay">
+		
+	    </div>
+	    
+	</section>
+	<!-- End Partners Section -->
+	
+	<!-- Partners Section -->
+	<section id="our-team" class="content-section clearfix">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-12">
+			<h2 class="section-title left">Our Team</h2>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-4 team-box animated-item fadeInUp" data-delay="100">
+			<div class="team-thumb">
+			    <img src={% static "home/images/chaitanya.jpg"%} alt="" >
+			    <div class="team-overlay">
+				<div class="team-desc" data-toggle="modal" data-target="#chaitanya_profile_desc">
+				    <p><i class="fa fa-plus chaitanya"></i></p>
+				</div>
+				<ul class="team-social-icons">
+				    <li><a href="https://twitter.com/sarkay" target="_blank"><i class="fa fa-twitter"></i></a></li>
+				    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+				</ul>
+			    </div>
+			</div>
+			<div class="team-info">
+			    <h4>Chaitanya Jagarlapudi</h4>
+			    <h6>Co-Founder &amp; Managing Partner</h6>
+			</div>
+		    </div> <!-- //.team-box -->
+		    
+		    <div class="col-md-4 team-box animated-item fadeInUp" data-delay="200">
+			<div class="team-thumb">
+			    <img src={% static "home/images/sai.png"%} alt="">
+			    <div class="team-overlay">
+				<div class="team-desc" data-toggle="modal" data-target="#saikiran_profile_desc">
+				    <p><i class="fa fa-plus saikiran"></i></p>
+				</div>
+				<ul class="team-social-icons">
+				    <li><a href="https://twitter.com/P_Sai_Kiran" target="_blank"><i class="fa fa-twitter"></i></a></li>
+				    <li><a href="http://in.linkedin.com/in/saikiranpulavarthi" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+				</ul>
+			    </div>
+			</div>
+			<div class="team-info">
+			    <h4>Saikiran Pulavarthi</h4>
+			    <h6>Co-Founder &amp; Managing Partner</h6>
+			</div>
+		    </div> <!-- //.team-box -->
+		    
+		    <div class="col-md-4 team-box animated-item fadeInUp" data-delay="300">
+			<div class="team-thumb">
+			    <img src={% static "home/images/anil.jpg"%} alt="">
+			    <div class="team-overlay">
+				<div class="team-desc" data-toggle="modal" data-target="#anil_profile_desc">
+				    <p><i class="fa fa-plus anil"></i></p>
+				</div>
+				<ul class="team-social-icons">
+				    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+				</ul>
+			    </div>
+			</div>
+			<div class="team-info">
+			    <h4>Anil Khatod</h4>
+			    <h6>Advisor</h6>
+			</div>
+		    </div> <!-- //.team-box -->
+		</div>
+	    </div>
+	</section>
+	<!-- End Partners Section -->
+	
+	<!-- Testimonials Section -->
+	<section id="testimonials" class="content-section content-overlay parallax-section">
+	    <div class="section-overlay">
+		<div class="container">
+		    <div class="row">
+			<div class="col-md-12">
+			    <div class="flexslider testimonials-slider">
+				<ul class="slides">
+				    <li>
+					<p>There is a difference between knowing the name of something and knowing something.</p>
+					<span class="testimonials-author">Richard Feynman</span>
+				    </li>
+				    <li>
+					<p>Everything should be made as simple as possible, but not simpler.</p>
+					<span class="testimonials-author">Albert Einstein</span>
+				    </li>
+				    <li>
+					<p>Tell me where I’m going to die, that is, so I don’t go there.</p>
+					<span class="testimonials-author">Charlie Munger</span>
+				    </li>
+				    
+				</ul>
+			    </div>
+			</div>
+		    </div>
+		</div>
+		
+	    </div>
+	</section>
+	<!-- End Testimonials Section -->
+	
+	<!-- Contact Section -->
+	<section id="contact" class="content-section">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-12">
+			<h2 class="section-title left">Contact Us</h2>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-6 contact-form">
+			<form id="email-form" action="MAILTO:chaitanya@rwadvisors.in" method="post">
+			    <div class="row">
+				<div class="col-md-6">
+				    <label for="name">Name</label>
+				    <input type="text" class="form-input" name="name" id="name">
+				</div>
+				<div class="col-md-6">
+				    <label for="email">Email</label>
+				    <input type="email" class="form-input" name="email" id="email">
+				</div>
+			    </div>
+			    <div class="row">
+				<div class="col-md-12">
+				    <label for="message">Mobile no</label>
+				    <input type="number" class="form-input" name="mobile" id="number">
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-md-12">
+				    <label for="message">Message</label>
+				    <textarea rows="5" id="message" name="message" class="form-input"></textarea>
+				</div>
+				</div>
+			    
+			    <div class="row">
+				<div class="col-md-12">
+				    <button class="main-button" type="submit">Send Message</button>
+				</div>
+			    </div>
+			</form>
+			
+		    </div>
+		    <div class="col-md-5 col-md-offset-1 contact-info">
+			<h4>Our Office</h4>
+			<p>
+				 Flat No.102, <br>
+				 Sai Leela Lake Vista, <br>
+                        Silver Springs Layout, <br>
+                        Marathahalli, <br>
+                        Bangalore,
+                        560034 <br>
+                         <br>
+			</p>
+			
+			<h4>Contact Details</h4>
+			<ul>
+			    <li><i class="fa fa-phone"></i>+91 9972399660</li>
+			    <li><i class="fa fa-envelope"></i><a href="mailto:">chaitanya@rwadvisors.in</a></li>
+			</ul>
+			
+		    </div>
+		</div>
+	    </div>
+	</section>
+	<!-- End Contact Section -->
+	
+	<!-- Hidden Content -->
+	<section id="load-folio" class="folio-details">
+	    <div id="folio-content" class="load-folio-content">
+		
+	    </div>
+	</section>
+	
+        <footer id="footer" class="site-footer" role="contentinfo">
+			<div class="container">
+                <div class="col-md-6 col-sm-6">
+                    <div class="copyright-text">
+                        <span>Copyright &copy; 2015 RW Investment Advisors LLP.</span>
+                         &nbsp;&nbsp;&nbsp;<a href="#">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+		<div class="modal fade" id="chaitanya_profile_desc" tabindex="-1" role="dialog" aria-labelledby="profile_desc_label">
+		  <div class="modal-dialog" style="font-size:15px;line-height:30px;padding-top:112px;">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Chaitanya Jagarlapudi</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>Prior to founding RW Advisors, Chaitanya was a Vice President at Argonaut Private Equity, a diversified global private equity fund with more than $ 6 bn under management; leading their BFSI vertical and specializing in identifying mid-cap opportunities. In a career spanning 12 years in the investing field, he was also an investment banker at Lazard India and an equity research analyst at Irevna Research covering technology stocks in the US.</p>
+		        <br>
+
+          		<p>Chaitanya is a bookworm addicted to reading especially books on investing, science and philosophy. He strongly believes that investing is very similar to living ones life wisely - which calls for patience and choosing your battles wisely. He has an MBA from ISB and is a chemical engineer from IIT Madras.</p>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->	
+		<div class="modal fade" id="saikiran_profile_desc" tabindex="-1" role="dialog" aria-labelledby="profile_desc_label">
+		  <div class="modal-dialog" style="font-size:15px;line-height:30px;padding-top:112px;">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Saikiran Pulavarthi</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>Prior to founding RW Advisors, Sai was Head of Research and BFSI Sector lead at Espirito Santo Securities, a boutique equity research outfit focused on mid-cap research in the Indian Public Markets ; He has 13 years of professional experience both on the sell-side and buy side at organizations including Fidelity, Centrum and Standard Chartered Bank. He is a Chartered Accountant and a Company Secretary by qualification.</p>
+		        <br>
+
+          		<p>In his down time Sai is an avid reader with interests spanning global businesses, history, politics and Indian philosophy. He firmly believes that evolution of an individual, society or an organisation depends on its history and helps in predicting the future</p>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->	
+		<div class="modal fade" id="anil_profile_desc" tabindex="-1" role="dialog" aria-labelledby="profile_desc_label">
+		  <div class="modal-dialog" style="font-size:15px;line-height:30px;padding-top:112px;">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Anil Khatod</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>Anil is one of three partners at Argonaut and has deep experience, both on the operating and investing areas. In 1980, Anil co-founded a venture back liquid crystal display company in Sunnyvale, California which was acquired in 1982. He subsequently joined Nortel Networks where he served in various senior executive roles leading upto the role of Chief Marketing & Strategy Officer for the company.</p>
+		        <br>
+
+          		<p>Just Prior to joining Argonaut, Anil was the CEO of AirDefence, a market leader in wireless network security with more than 500 enterprise customers globally. Anil currently serves on the board of Memjet, Venture East Proactive, Siklu Networks and OmniGuide Inc. Over the last 10 years, Anil has also been an angel investor with investments ranging from bio fuels to healthcare to technology companies. Anil has a bachelor and masters degree in business administration from the university of Rajasthan India and is a Chartered Accountant from the Institute of Chartered Accountants of India.</p>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div>
+		<!--  <div class="modal fade" id="nick_profile_desc" tabindex="-1" role="dialog" aria-labelledby="profile_desc_label">
+		  <div class="modal-dialog" style="width:800px;font-size:15px;line-height:30px;padding-top:112px;">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Nick Paulson-Ellis</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>Nick has close to 15 years of professional experience in technology venture capital, equity research and investment banking, working since 2000 in entrepreneurial and business development roles. He has built two multimillion pound revenue businesses, across the UK & India from scratch and saw them develop into multi-geography operations.</p>
+		        <br>
+
+          		<p>In his last role he was Co-Head of Emerging markets at BESI Novo Bank group (earlier called as Banco Espirito Santo) and was earlier CEO of the India business. He was largely responsible for building a profitable and successful India equities business when markets were not supportive during 2011-14.</p>
+          		<br>
+          		<p>He is currently launching his 3rd start-up, “The Sports Edit”, with a vision to create the UK’s leading premium fashion-forward online and in-store sportswear retailer, focused on the intersection between quality, performance and style.</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>	-->
+
+        <!-- JavaScripts -->
+        <script type="text/javascript">
+        $(document).ready(function() {
+        	$(".chaitanya").hover(function(){
+        		$("#chaitanya_profile_desc").modal('show',5000);
+        	});
+        	$(".saikiran").hover(function(){
+        		$("#saikiran_profile_desc").modal('show',5000);
+        	});
+        	$(".anil").hover(function(){
+        		$("#anil_profile_desc").modal('show',5000);
+        	});
+        });
+
+        </script>
+        <script src={% static "home/bootstrap/js/bootstrap.min.js"%}></script>
+        <script src={% static "home/js/plugins.js"%}></script>
+        <script src={% static "home/js/custom.js"%}></script>
+
+    </body>
+
+<!-- Mirrored from rwadvisors.in/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Mar 2016 20:06:04 GMT -->
+</html>
